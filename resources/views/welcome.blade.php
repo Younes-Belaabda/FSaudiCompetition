@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div id="reader" width="600px"></div>
+    {{-- <div id="reader" width="600px"></div>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
@@ -34,7 +34,7 @@
             /* verbose= */
             false);
         html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    </script>
+    </script> --}}
 </body>
 
 </html>
