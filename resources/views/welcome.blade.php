@@ -15,7 +15,7 @@
         function onScanSuccess(decodedText, decodedResult) {
             // handle the scanned code as you like, for example:
             alert(`Code matched = ${decodedText}`, decodedResult);
-            console.log(`Code matched = ${decodedText}`, decodedResult);
+            // console.log(`Code matched = ${decodedText}`, decodedResult);
         }
 
         function onScanFailure(error) {
