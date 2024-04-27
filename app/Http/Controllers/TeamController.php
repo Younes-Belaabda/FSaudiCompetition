@@ -97,7 +97,7 @@ class TeamController extends Controller
         Presence::create([
             'team_id' => $team->id,
             // 'user_id' => auth()->user()->id
-            'user_id' => 1
+            'user_id' => auth()->user()->id
         ]);
 
         return json_encode([
