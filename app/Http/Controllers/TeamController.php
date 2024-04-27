@@ -94,7 +94,6 @@ class TeamController extends Controller
 
     public function presence(Team $team){
 
-        // $e
         Presence::create([
             'team_id' => $team->id,
             // 'user_id' => auth()->user()->id
@@ -108,6 +107,6 @@ class TeamController extends Controller
     }
 
     public function reset(){
-        
+
     }
 }
