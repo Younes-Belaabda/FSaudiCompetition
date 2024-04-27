@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <form action="{{ route('admin.team.import') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="file">
+        <button>import</button>
+    </form>
     <div class="table-responsive">
         <table class="table mb-0">
             <thead>

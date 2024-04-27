@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'rb';
+    src: url('../fonts/rb.ttf');
+}
+
+* {
+    font-family: 'rb';
+    color: white;
+}
+
+body,
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.list-group div {
+    color: black !important;
+}
+
+h3 {
+    color: #F7E4A2 !important;
+    padding: 10px 0;
+}
+
+.team-name {
+    color: #F7E4A2;
+}
+
+.qr-code {
+    border: 10px solid #009BDB;
+    width: max-content;
+}
+
+
+.competition-location {
+    margin-bottom: 25px;
+    border: 10px solid #009BDB;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    background-color: #009BDB;
+}
+
+.competition-location iframe {
+    border-radius: 5px;
+    width: 100%;
+}

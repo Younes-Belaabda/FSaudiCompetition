@@ -14,12 +14,18 @@ class TeamsImport implements ToCollection , WithHeadingRow
     */
     public function collection(Collection $collection)
     {
-        $team          = null;
-        $students = [];
+        $team            = null;
+        $students        = [];
+        $is_first        = true;
 
         foreach($collection as $item){
             try{
                 if($item['alrkm'] != null){
+                    if($is_first == false){
+                        $team->students = json_encode($students);
+                        $team->save();
+                    }
+
                     $team = Team::create([
                         'uuid' => time() . $item['alrkm'],
                         'team_eID' => $item['alrkm'],
@@ -31,29 +37,17 @@ class TeamsImport implements ToCollection , WithHeadingRow
                         'coach_phone' => $item['rkm_almdrb'],
                         'coach_eID' => $item['hoy_almdrb']
                     ]);
+
+                    $students = [];
+                    $is_first = false;
                 }
 
-                if($team->students == null){
-                    $team->students = json_encode([
-                        'label'  => $item['alnoaa'],
-                        'name'   => $item['alasm'],
-                        'eID'    => $item['rkm_alhoy'],
-                        'phone'  => $item['rkm_altalb']
-                    ]);
-                }else{
-                    $temp_students = json_decode($team->students);
-                    $temp_students = array_merge(collect($temp_students)->toArray() , [
-                        'label'  => $item['alnoaa'],
-                        'name'   => $item['alasm'],
-                        'eID'    => $item['rkm_alhoy'],
-                        'phone'  => $item['rkm_altalb']
-                    ]);
-                    info($temp_students);
-                    $team_students = json_encode($temp_students);
-                }
-
-                $team->save();
-
+                $students[] = [
+                    'label'  => $item['alnoaa'],
+                    'name'   => $item['alasm'],
+                    'eID'    => $item['rkm_alhoy'],
+                    'phone'  => $item['rkm_altalb']
+                ];
             }catch(\Exception $e){
                 info('Error' . $e->getMessage() , ['students' => $students]);
             }
