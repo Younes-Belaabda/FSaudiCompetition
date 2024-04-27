@@ -46,5 +46,5 @@ Route::prefix('admin')->as('admin.')->group(function () {
 Route::get('team/{team:uuid}/info' , function(\App\Models\Team $team){
     $qrcode = QrCode::size(150)->generate(route('admin.team.presence' , ['team' => $team]));
     return view('guest.team.info' , ['team' => $team , 'qrcode' => $qrcode]);
-});
+})->name('team.info');
 

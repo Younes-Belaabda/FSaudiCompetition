@@ -14,6 +14,7 @@
                     <th>اسم المدرب</th>
                     <th>رقم المدرب</th>
                     <th>هوية المدرب</th>
+                    <th>معلومات الفريق</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,9 @@
                         <td>{{ $team->coach_name }}</td>
                         <td>{{ $team->coach_phone }}</td>
                         <td>{{ $team->coach_eID }}</td>
+                        <td>
+                            <a href="{{ route('team.info' , ['team' => $team]) }}">الرابط</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
