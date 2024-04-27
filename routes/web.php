@@ -40,7 +40,7 @@ Route::prefix('admin')->as('admin.')->group(function () {
     Route::get('team/{team:uuid}/presence' ,[TeamController::class , 'presence'])
     ->name('team.presence');
     Route::resource('presence', PresenceController::class);
-});
+})->middleware('auth');
 
 // Team Page
 Route::get('team/{team:uuid}/info' , function(\App\Models\Team $team){
