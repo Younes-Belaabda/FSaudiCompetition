@@ -123,7 +123,7 @@
                                 data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                                 aria-expanded="false">
                                 <span class="ms-1 d-none d-md-inline-block">
-                                    Jamie D. <i class="mdi mdi-chevron-down"></i>
+                                    {{ auth()->user()->name }} <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
