@@ -33,14 +33,14 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::prefix('admin')->as('admin.')->group(function () {
+Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
     Route::get('team/scan' , [TeamController::class , 'scan'])->name('team.scan');
     Route::post('team/import' , [TeamController::class , 'import'])->name('team.import');
     Route::resource('team', TeamController::class);
     Route::get('team/{team:uuid}/presence' ,[TeamController::class , 'presence'])
     ->name('team.presence');
     Route::resource('presence', PresenceController::class);
-})->middleware(['auth', 'verified']);
+});
 
 // Team Page
 Route::get('team/{team:uuid}/info' , function(\App\Models\Team $team){
