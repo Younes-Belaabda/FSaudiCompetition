@@ -93,12 +93,15 @@ class TeamController extends Controller
     }
 
     public function presence(Team $team){
-
-        Presence::create([
-            'team_id' => $team->id,
-            // 'user_id' => auth()->user()->id
-            'user_id' => auth()->user()->id
-        ]);
+        try{
+            Presence::create([
+                'team_id' => $team->id,
+                // 'user_id' => auth()->user()->id
+                'user_id' => auth()->user()->id
+            ]);
+        }catch(\Exception $exception){
+            abort(403 , 'الباركود لتسجبل الحضور خاص بالإدارة فقط شكرا .');
+        }
 
         return json_encode([
             'message' => 'شكرا تم تسجيل حضور الفريق ' . $team->team_name,
