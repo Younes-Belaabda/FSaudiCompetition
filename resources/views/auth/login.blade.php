@@ -65,14 +65,14 @@
                         @csrf
                         <div class="form-group mb-3">
                             <label class="form-label" for="email">البريد الإلكتروني</label>
-                            <input class="form-control" type="email" id="email" required=""
+                            <input class="form-control" type="email" name="email" id="email" required=""
                                 placeholder="البريد الإلكتروني">
                         </div>
 
                         <div class="form-group mb-3">
                             <a href="pages-recoverpw.html" class="text-muted float-end"><small></small></a>
                             <label class="form-label" for="password">كلمة المرور</label>
-                            <input class="form-control" type="password" required="" id="password"
+                            <input class="form-control" name="password" type="password" required="" id="password"
                                 placeholder="كلمة المرور">
                         </div>
 
