@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Dashboard | Dashtrap - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>لوحة التحكم | تسجيل الحضور</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Myra Studio" name="author" />
+    <meta content="Belaabda Younes" name="author" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
     <link href="{{ asset('assets/libs/morris.js/morris.css') }}" rel="stylesheet" type="text/css" />
 
@@ -30,14 +29,14 @@
             <div class="logo-box">
                 <!-- Brand Logo Light -->
                 <a href="index.html" class="logo-light">
-                    <img src="assets/images/logo-light.png" alt="logo" class="logo-lg" height="28">
-                    <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                    <img src="{{ asset('assets/guest/logo.png') }}" alt="logo" class="logo-lg" height="28">
+                    <img src="{{ asset('assets/guest/logo.png') }}" alt="small logo" class="logo-sm" height="28">
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a href="index.html" class="logo-dark">
-                    <img src="assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="28">
-                    <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="28">
+                    <img src="{{ asset('assets/guest/logo.png') }}" alt="dark logo" class="logo-lg" height="28">
+                    <img src="{{ asset('assets/guest/logo.png') }}" alt="small logo" class="logo-sm" height="28">
                 </a>
             </div>
 
@@ -84,8 +83,8 @@
                         <div class="logo-box">
                             <!-- Brand Logo Light -->
                             <a href="index.html" class="logo-light">
-                                <img src="assets/images/logo-light.png" alt="logo" class="logo-lg" height="22">
-                                <img src="assets/images/logo-sm.png" alt="small logo" class="logo-sm" height="22">
+                                <img src="{{ asset('assets/guest/logo.png') }}" alt="logo" class="logo-lg" height="22">
+                                <img src="{{ asset('assets/guest/logo.png') }}" alt="small logo" class="logo-sm" height="22">
                             </a>
 
                             <!-- Brand Logo Dark -->
@@ -165,7 +164,7 @@
             </div> <!-- content -->
 
             <!-- Footer Start -->
-            <footer class="footer">
+            <footer class="footer d-none">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">

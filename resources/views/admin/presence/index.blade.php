@@ -18,7 +18,7 @@
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $presence->team->team_name }}</td>
                         <td>{{ $presence->created_at->format('d-m-Y')}}</td>
-                        <td>{{ $presence->created_at->format('h:i') }}</td>
+                        <td>{{ $presence->created_at->translatedFormat('g:i A') }}</td>
                         <td>
                             <form method="POST" action="{{ route('admin.presence.destroy' , ['presence' => $presence]) }}">
                                 @method('DELETE')
