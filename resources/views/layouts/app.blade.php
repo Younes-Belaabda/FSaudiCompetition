@@ -151,6 +151,9 @@
                             <div class="col-lg-6">
                                 <h4 class="page-title mb-0">لوحة التحكم</h4>
                             </div>
+                            <div class="col-lg-6" dir="ltr">
+                                @yield('buttons')
+                            </div>
                         </div>
                     </div>
                     <!-- end page title -->

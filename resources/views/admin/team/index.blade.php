@@ -1,10 +1,19 @@
 @extends('layouts.app')
 
+@section('buttons')
+    <form action="" method="post">
+        @csrf
+        <button class="btn btn-sm btn-danger">حذف كل الفرق</button>
+    </form>
+@endsection
 @section('content')
     <form action="{{ route('admin.team.import') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="file">
-        <button>import</button>
+        <div class="form-control">
+            <label for="file" class="form-label">ملف الفرق</label>
+            <input class="form-control mb-2" type="file" name="file">
+            <button class="btn btn-success">رفع الملف</button>
+        </div>
     </form>
     <div class="table-responsive">
         <table class="table mb-0">
@@ -35,7 +44,7 @@
                         <td>{{ $team->coach_phone }}</td>
                         <td>{{ $team->coach_eID }}</td>
                         <td>
-                            <a href="{{ route('team.info' , ['team' => $team]) }}">الرابط</a>
+                            <a href="{{ route('team.info', ['team' => $team]) }}">الرابط</a>
                         </td>
                     </tr>
                 @endforeach

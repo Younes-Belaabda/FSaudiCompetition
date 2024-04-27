@@ -9,6 +9,7 @@
                     <th>الفريق</th>
                     <th>تاريخ الحضور</th>
                     <th>وقت الحضور</th>
+                    <th>العمليات</th>
                 </tr>
             </thead>
             <tbody>
@@ -18,6 +19,13 @@
                         <td>{{ $presence->team->team_name }}</td>
                         <td>{{ $presence->created_at->format('d-m-Y')}}</td>
                         <td>{{ $presence->created_at->format('h:i') }}</td>
+                        <td>
+                            <form method="POST" action="{{ route('admin.presence.destroy' , ['presence' => $presence]) }}">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger btn-sm">حذف</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

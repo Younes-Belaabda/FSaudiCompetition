@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-12 col-md-6">
+                <img src="{{ asset('assets/guest/logo.png') }}"/>
                 <h3>تسجيلات الحضور</h3>
                 <table class="table">
                     <tbody>
@@ -23,10 +24,12 @@
                 </table>
             </div>
             <div class="col-12 col-md-6" dir="ltr">
-                <div class="qr-code">
-                    {!! $qrcode !!}
+                <div class="d-flex flex-column align-items-center align-items-md-start">
+                    <div class="qr-code">
+                        {!! $qrcode !!}
+                    </div>
+                    <h1 class="team-name">{{ $team->team_name }}</h1>
                 </div>
-                <h1 class="team-name">{{ $team->team_name }}</h1>
             </div>
         </div>
         <div class="row">
