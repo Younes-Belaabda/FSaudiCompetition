@@ -1,41 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@section('content')
+    <div class="row">
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <span class="badge badge-soft-primary float-end">Daily</span>
+                        <h5 class="card-title mb-0">Cost per Unit</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                $17.21
+                            </h2>
+                        </div>
+                        <div class="col-4 text-end">
+                            <span class="text-muted">12.5% <i class="mdi mdi-arrow-up text-success"></i></span>
+                        </div>
+                    </div>
 
-<body>
-    <div id="reader" width="600px"></div>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-    <script>
-        function onScanSuccess(decodedText, decodedResult) {
-            // handle the scanned code as you like, for example:
-            // alert(`Code matched = ${decodedText}`, decodedResult);
-            console.log(`Code matched = ${decodedText}`, decodedResult);
-        }
+                    <div class="progress shadow-sm" style="height: 5px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 57%;">
+                        </div>
+                    </div>
+                </div>
+                <!--end card body-->
+            </div><!-- end card-->
+        </div> <!-- end col-->
 
-        function onScanFailure(error) {
-            // handle scan failure, usually better to ignore and keep scanning.
-            // for example:
-            // console.warn(`Code scan error = ${error}`);
-        }
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <span class="badge badge-soft-primary float-end">Per Week</span>
+                        <h5 class="card-title mb-0">Market Revenue</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                $1875.54
+                            </h2>
+                        </div>
+                        <div class="col-4 text-end">
+                            <span class="text-muted">18.71% <i class="mdi mdi-arrow-down text-danger"></i></span>
+                        </div>
+                    </div>
 
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", {
-                fps: 10,
-                qrbox: {
-                    width: 250,
-                    height: 250
-                }
-            },
-            /* verbose= */
-            false);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
-    </script>
-</body>
+                    <div class="progress shadow-sm" style="height: 5px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 57%;">
+                        </div>
+                    </div>
+                </div>
+                <!--end card body-->
+            </div><!-- end card-->
+        </div> <!-- end col-->
 
-</html>
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <span class="badge badge-soft-primary float-end">Per Month</span>
+                        <h5 class="card-title mb-0">Expenses</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                $784.62
+                            </h2>
+                        </div>
+                        <div class="col-4 text-end">
+                            <span class="text-muted">57% <i class="mdi mdi-arrow-up text-success"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress shadow-sm" style="height: 5px;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 57%;">
+                        </div>
+                    </div>
+                </div>
+                <!--end card body-->
+            </div>
+            <!--end card-->
+        </div> <!-- end col-->
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <span class="badge badge-soft-primary float-end">All Time</span>
+                        <h5 class="card-title mb-0">Daily Visits</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                1,15,187
+                            </h2>
+                        </div>
+                        <div class="col-4 text-end">
+                            <span class="text-muted">17.8% <i class="mdi mdi-arrow-down text-danger"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="progress shadow-sm" style="height: 5px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 57%;"></div>
+                    </div>
+                </div>
+                <!--end card body-->
+            </div><!-- end card-->
+        </div> <!-- end col-->
+    </div>
+    <!-- end row-->
+@endsection

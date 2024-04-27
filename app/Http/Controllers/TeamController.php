@@ -15,7 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return view('admin.team.index' , ['teams' => \App\Models\team::paginate(10)]);
+        return view('admin.team.index' , ['teams' => \App\Models\Team::paginate(10)]);
     }
 
     /**
@@ -53,7 +53,7 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(team $team)
+    public function edit(Team $team)
     {
         return view('admin.team.edit' , ['team' => $team]);
     }
@@ -61,7 +61,7 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, team $team)
+    public function update(Request $request, Team $team)
     {
         $validated = $request->validate([
             'name' => 'required',
@@ -77,7 +77,7 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(team $team)
+    public function destroy(Team $team)
     {
         $team->delete();
         return back();
@@ -86,6 +86,10 @@ class TeamController extends Controller
     public function import(Request $request){
         $filename = $request->file('file')->store('files/' . time() . '.xlsx');
         Excel::import(new TeamsImport, storage_path('app/' . $filename));
+    }
+
+    public function scan(){
+        return view('admin.team.scan');
     }
 
     public function presence(Team $team){

@@ -21,4 +21,8 @@ class Team extends Model
         'coach_eID',
         'students',
     ];
+
+    public function presences(){
+        return $this->hasMany(Presence::class);
+    }
 }

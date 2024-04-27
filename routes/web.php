@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PresenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,16 @@ require __DIR__.'/auth.php';
 
 
 Route::prefix('admin')->as('admin.')->group(function () {
+    Route::get('team/scan' , [TeamController::class , 'scan'])->name('team.scan');
     Route::post('team/import' , [TeamController::class , 'import'])->name('team.import');
     Route::resource('team', TeamController::class);
     Route::get('team/{team:uuid}/presence' ,[TeamController::class , 'presence'])
     ->name('team.presence');
+    Route::resource('presence', PresenceController::class);
 });
 
-Route::get('team/{team}/info' , function(\App\Models\Team $team){
+// Team Page
+Route::get('team/{team:uuid}/info' , function(\App\Models\Team $team){
     $qrcode = QrCode::size(150)->generate(route('admin.team.presence' , ['team' => $team]));
     return view('guest.team.info' , ['team' => $team , 'qrcode' => $qrcode]);
 });
