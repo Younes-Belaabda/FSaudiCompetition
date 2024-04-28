@@ -7,6 +7,7 @@ use App\Models\Team;
 use App\Models\Presence;
 use App\Imports\TeamsImport;
 use Illuminate\Http\Request;
+use App\Events\TeamScannedEvent;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Schema;
 
@@ -118,6 +119,8 @@ class TeamController extends Controller
             'team_id' => $team->id,
             'user_id' => auth()->user()->id
         ]);
+
+        TeamScannedEvent::dispatch($team);
 
         return json_encode([
             'message' => 'شكرا تم تسجيل حضور الفريق ' . $team->team_name,
