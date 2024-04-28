@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Presence;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
