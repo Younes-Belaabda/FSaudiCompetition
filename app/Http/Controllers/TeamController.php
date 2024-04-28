@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Team;
 use App\Models\Presence;
 use App\Imports\TeamsImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Schema;
 
 class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.team.index' , ['teams' => \App\Models\Team::paginate(10)]);
+        $teams = Team::paginate(10);
+        $team_categories = Team::groupBy('team_category')->pluck('team_category');
+
+        if($request->all() != []){
+            $teams = Team::where([
+                ['team_name' , 'like' , "%" . $request->input('team_name') . "%"],
+                ['team_category' , 'like' , "%" . $request->input('team_category') . "%"],
+            ])->paginate(10);
+        }
+
+        return view('admin.team.index' , ['teams' => $teams , 'team_categories' => $team_categories]);
     }
 
     /**
@@ -86,6 +98,7 @@ class TeamController extends Controller
     public function import(Request $request){
         $filename = $request->file('file')->store('files/' . time() . '.xlsx');
         Excel::import(new TeamsImport, storage_path('app/' . $filename));
+        return back();
     }
 
     public function scan(){
@@ -93,23 +106,27 @@ class TeamController extends Controller
     }
 
     public function presence(Team $team){
+        if(Presence::whereDate('created_at' , Carbon::today())->get()){
+            return json_encode([
+                'message' => "الفريق سجل {$team->team_name} حضوره اليوم مسبقا"
+            ]);
+        }
+
         Presence::create([
             'team_id' => $team->id,
-            // 'user_id' => auth()->user()->id
             'user_id' => auth()->user()->id
         ]);
-        // try{
-        // }catch(\Exception $exception){
-        //     abort(403 , 'الباركود لتسجبل الحضور خاص بالإدارة فقط شكرا .');
-        // }
 
         return json_encode([
             'message' => 'شكرا تم تسجيل حضور الفريق ' . $team->team_name,
         ]);
-
     }
 
     public function reset(){
-
+        Schema::disableForeignKeyConstraints();
+        Presence::truncate();
+        Team::truncate();
+        Schema::enableForeignKeyConstraints();
+        return back();
     }
 }
