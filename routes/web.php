@@ -34,12 +34,12 @@ require __DIR__.'/auth.php';
 
 
 Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(function () {
-    Route::resource('team', TeamController::class);
     Route::get('team/scan' , [TeamController::class , 'scan'])->name('team.scan');
     Route::post('team/import' , [TeamController::class , 'import'])->name('team.import');
     Route::get('team/{team:uuid}/presence' ,[TeamController::class , 'presence'])
     ->name('team.presence');
     Route::post('team/reset' , [TeamController::class , 'reset'])->name('team.reset');
+    Route::resource('team', TeamController::class);
 
 
 

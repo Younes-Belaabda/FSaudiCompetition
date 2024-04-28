@@ -2,8 +2,8 @@
 
 @section('content')
     <div id="reader" width="600px"></div>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/html5-qrcode.js') }}" type="text/javascript"></script>
     <script>
         function onScanSuccess(decodedText, decodedResult) {
             $.ajax({
