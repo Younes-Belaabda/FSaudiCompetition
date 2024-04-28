@@ -11,7 +11,11 @@
                         <tr>
                             <td>الأحد</td>
                             <td>
+                                @if (\App\Models\Presence::whereDate('created_at' , \Carbon\Carbon::today())->where('team_id' , $team->id)->count() > 0)
+                                <span class="badge bg-success">مسجل</span>
+                                @else
                                 <span class="badge bg-danger">غير مسجل</span>
+                                @endif
                             </td>
                         </tr>
                         <tr>

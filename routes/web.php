@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Team;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ProfileController;
@@ -41,12 +43,25 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::post('team/reset' , [TeamController::class , 'reset'])->name('team.reset');
     Route::resource('team', TeamController::class);
 
-
-
     Route::resource('presence', PresenceController::class);
 });
 
 // Team Page
+Route::get('team/check' , function(){
+    return view('guest.team.check');
+})->name('team.check');
+
+Route::post('team/check' , function(Request $request){
+
+    $validate = $request->validate([
+        'coach_eID' => 'required'
+    ]);
+
+    $team = Team::where('coach_eID' , $request->coach_eID)->first();
+
+    return redirect()->route('team.info' , ['team' => $team]);
+})->name('team.check');
+
 Route::get('team/{team:uuid}/info' , function(\App\Models\Team $team){
     $qrcode = QrCode::size(150)->generate(route('admin.team.presence' , ['team' => $team]));
     return view('guest.team.info' , ['team' => $team , 'qrcode' => $qrcode]);
