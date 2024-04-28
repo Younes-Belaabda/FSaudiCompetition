@@ -107,7 +107,7 @@ class TeamController extends Controller
 
     public function presence(Team $team){
         if(Presence::whereDate('created_at' , Carbon::today())
-        ->where('team_id' , 28)
+        ->where('team_id' , $team->id)
         ->count() > 0){
             return json_encode([
                 'message' => "الفريق سجل {$team->team_name} حضوره اليوم مسبقا"
