@@ -21,7 +21,11 @@
                         <tr>
                             <td>الإتنين</td>
                             <td>
+                                @if (\App\Models\Presence::whereDate('created_at' , \Carbon\Carbon::create(2024 , 04 , 29)->toDateTimeString())->where('team_id' , $team->id)->count() > 0)
+                                <span class="badge bg-success">مسجل</span>
+                                @else
                                 <span class="badge bg-danger">غير مسجل</span>
+                                @endif
                             </td>
                         </tr>
                     </tbody>
