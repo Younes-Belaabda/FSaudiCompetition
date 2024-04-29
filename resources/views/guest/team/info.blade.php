@@ -125,6 +125,7 @@
             </div>
         </div>
     </div>
+    <input id="uuid" type="hidden" name="uuid" value="{{ $team->uuid }}">
 @endsection
 
 @section('scripts')
@@ -138,7 +139,14 @@
 
         var channel = pusher.subscribe('team-scanned');
         channel.bind('App\\Events\\TeamScannedEvent', function(data) {
-            alert('تم تسجيل الحضور بنجاح');
+            var team = data.team;
+            var uuid = document.querySelector('#uuid').value;
+            if(team.uuid == uuid){
+                alert('تم تسجيل الحضور بنجاح');
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
         });
         // var channel = Echo.channel('team-scanned');
         // channel.listen('team-scanned-event', function(data) {

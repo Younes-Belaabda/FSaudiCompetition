@@ -32,7 +32,7 @@ class TeamScannedEvent implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            // new PrivateChannel('team-scanned'),
+            // new PrivateChannel('team-scanned.' . $team->uuid),
             new Channel('team-scanned'),
         ];
     }

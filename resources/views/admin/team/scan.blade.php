@@ -12,7 +12,7 @@
             }).done(function(res){
                 message = JSON.parse(res).message;
                 alert(message);
-                location.reload();
+                // location.reload();
             })
         }
 
