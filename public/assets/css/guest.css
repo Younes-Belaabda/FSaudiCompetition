@@ -57,14 +57,15 @@ h3 {
 
 
 footer {
-    min-height: 350px;
+    min-height: 200px;
     width: 100%;
     background-color: #17273D;
 }
 
 footer .upper-footer {
     /* background-color: #FFFFFF; */
-    padding: 10px 0;
+    /* padding: 10px 0; */
+    padding-bottom: 20px;
 }
 
 .sponsors {
@@ -72,10 +73,10 @@ footer .upper-footer {
     /* background-color: #F7E4A2; */
 }
 .sponsors img {
-    width: 210px;
-    height: 150px;
+    width: 100%;
+        height: auto;
 }
 .sponsors img.special {
-    width: 250px;
-    height: 200px;
+    width: 100%;
+        height: auto;
 }

@@ -19,22 +19,22 @@
         <div class="upper-footer sponsors">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-3">
+                    <div class="col-3">
                         <div class="text-center">
                             <img src="{{ asset('assets/sponsors/logo-3.png') }}">
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-3">
                         <div class="text-center">
                             <img class="special" src="{{ asset('assets/sponsors/logo-2.png') }}">
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-3">
                         <div class="text-center">
                             <img src="{{ asset('assets/sponsors/logo-1.png') }}">
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-3">
                         <div class="text-center">
                             <img src="{{ asset('assets/sponsors/logo-4.png') }}">
                         </div>
