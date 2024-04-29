@@ -17,9 +17,12 @@ class TeamsImport implements ToCollection , WithHeadingRow
         $team            = null;
         $students        = [];
         $is_first        = true;
+        $iteration = 0;
 
         foreach($collection as $item){
+            $iteration++;
             try{
+
                 if($item['alrkm'] != null){
                     if($is_first == false){
                         $team->students = json_encode($students);
@@ -48,6 +51,12 @@ class TeamsImport implements ToCollection , WithHeadingRow
                     'eID'    => $item['rkm_alhoy'],
                     'phone'  => $item['rkm_altalb']
                 ];
+
+                if($iteration == count($collection)){
+                    $team->students = json_encode($students);
+                        $team->save();
+                }
+                info('Student : ' , ['students' => $students]);
             }catch(\Exception $e){
                 info('Error' . $e->getMessage() , ['students' => $students]);
             }
