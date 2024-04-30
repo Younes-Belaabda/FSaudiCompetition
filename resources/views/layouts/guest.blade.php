@@ -20,6 +20,14 @@
             <div class="container">
                 <div class="row my-2">
                     <div class="col-md-6">
+                        <b>الدعم الفني</b>
+                        <ul>
+                            <li>
+                                <a style="text-decoration: none" class="text-white" href="Tel: +966555177306">الدعم الفني روبوتيرا</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
                         <div class="alert alert-warning">
                             <p class="text-dark">يسرنا تواصلكم واستقبال استفساراتكم للجنة التسكين والضيافة بتصفيات فيرست 2024 عبر الواتس آب
                                 <span class="badge bg-success">
@@ -33,14 +41,7 @@
                             <p class="text-dark m-0 p-0">مرحبا بالجميع</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <b>الدعم الفني</b>
-                        <ul>
-                            <li>
-                                <a style="text-decoration: none" class="text-white" href="Tel: +966555177306">الدعم الفني روبوتيرا</a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div class="row my-4">
                     <div class="col-3">
