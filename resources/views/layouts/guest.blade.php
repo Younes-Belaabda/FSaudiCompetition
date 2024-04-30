@@ -44,22 +44,22 @@
 
                 </div>
                 <div class="row my-4">
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="text-center">
                             <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="text-center">
                             <img  src="{{ asset('assets/sponsors/logo-2.png') }}">
                         </div>
                     </div>
-                    <div class="col-3">
+                    {{-- <div class="col-3">
                         <div class="text-center">
                             <img src="{{ asset('assets/sponsors/logo-1.png') }}">
                         </div>
-                    </div>
-                    <div class="col-3">
+                    </div> --}}
+                    <div class="col-4">
                         <div class="text-center">
                             <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
                         </div>

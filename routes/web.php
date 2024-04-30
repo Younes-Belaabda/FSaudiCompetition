@@ -58,10 +58,12 @@ Route::get('team/check' , function(){
 Route::post('team/check' , function(Request $request){
 
     $validate = $request->validate([
-        'coach_eID' => 'required'
+        'coach_eID' => 'required|exists:teams,coach_eID'
     ]);
 
     $team = Team::where('coach_eID' , $request->coach_eID)->first();
+
+
 
     return redirect()->route('team.info' , ['team' => $team]);
 })->name('team.check');

@@ -23,6 +23,9 @@
                             <input class="form-control" type="coach_eID" name="coach_eID" id="coach_eID" required=""
                                 placeholder="رقم هوية المدرب">
                         </div>
+                        @error('coach_eID')
+                            <div class="alert alert-danger">رقم الهوية غير موجود</div>
+                        @enderror
 
 
                         <div class="form-group mb-0 text-center">
@@ -48,7 +51,7 @@
         }
 
         footer {
-            padding-top: 50px !important;
+            /* padding-top: 50px !important; */
             /* background-color: #F7E4A2; */
         }
 
@@ -65,22 +68,22 @@
     <footer>
         <div class="container">
             <div class="row my-4">
-                <div class="col-3">
+                <div class="col-4">
                     <div class="text-center">
                         <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                     <div class="text-center">
                         <img src="{{ asset('assets/sponsors/logo-2.png') }}">
                     </div>
                 </div>
-                <div class="col-3">
+                {{-- <div class="col-3">
                     <div class="text-center">
                         <img src="{{ asset('assets/sponsors/logo-1.png') }}">
                     </div>
-                </div>
-                <div class="col-3">
+                </div> --}}
+                <div class="col-4">
                     <div class="text-center">
                         <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
                     </div>
