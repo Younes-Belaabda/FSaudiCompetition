@@ -36,7 +36,7 @@
                             </p>
                             <p class="text-dark">أو بالضغط مباشرة على  الرابط ادناه</p>
                             <div class="badge bg-success">
-                                <a style="text-decoration: none" class="text-white" href="wa.me/966508344983">وتساب</a>
+                                <a style="text-decoration: none" class="text-white" href="https://api.whatsapp.com/send?phone=966508344983">واتساب</a>
                             </div>
                             <p class="text-dark m-0 p-0">مرحبا بالجميع</p>
                         </div>

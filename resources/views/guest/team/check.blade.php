@@ -1,6 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
+<style>
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+</style>
     <div class="row justify-content-center">
         <div class="col-xl-4 col-md-5">
             <div class="card">
@@ -44,7 +50,7 @@
             /* min-height: 200px; */
             /* background-color: rebeccapurple; */
             position: absolute;
-            bottom: 0;
+            bottom: -30px;
             right: 0;
             width: 100%;
             padding-bottom: 20px;
