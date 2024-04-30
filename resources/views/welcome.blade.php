@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-12">
             <a href="{{ route('admin.team.scan') }}" class="btn btn-success">تسجيل الحضور</a>
+            @role('ادمين')
             <a href="{{ route('admin.team.index') }}" class="btn btn-info">عرض الفرق</a>
+            @endrole
             <a href="{{ route('admin.presence.index') }}" class="btn btn-warning">عرض الحضور</a>
         </div> <!-- end col-->
     </div>

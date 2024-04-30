@@ -4,6 +4,7 @@ use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PresenceController;
 
@@ -42,6 +43,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     ->name('team.presence');
     Route::post('team/reset' , [TeamController::class , 'reset'])->name('team.reset');
     Route::resource('team', TeamController::class);
+    Route::resource('user', UserController::class);
 
     Route::resource('presence', PresenceController::class);
 });

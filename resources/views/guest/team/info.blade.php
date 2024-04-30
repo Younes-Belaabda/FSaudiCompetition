@@ -115,12 +115,13 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h3>أين تقع المسابقة</h3>
+                <h3>مقر المسابقة</h3>
+                <h5>
+                    الصالة متعددة الأغراض
+                    كلية الجبيل الصناعية
+                </h5>
                 <div class="competition-location">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2051.7715411386034!2d-8.010005646668901!3d31.641482371555806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee86746aaaab%3A0x3d12e04dd028b415!2sEcole%20Akenssouss!5e0!3m2!1sen!2sma!4v1714225574238!5m2!1sen!2sma"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3551.5580255060763!2d49.564578399999995!3d27.107228499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e350f03767c393d%3A0x6bbafcaa2baa83f4!2s8422%20Rd%20Number%206%2C%203616%2C%20Al%20Jubayl%2035718%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sma!4v1714466632921!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

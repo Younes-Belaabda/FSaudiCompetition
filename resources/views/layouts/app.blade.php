@@ -28,13 +28,13 @@
             <!-- Brand Logo -->
             <div class="logo-box">
                 <!-- Brand Logo Light -->
-                <a href="index.html" class="logo-light">
+                <a href="/" class="logo-light">
                     <img src="{{ asset('assets/guest/logo.png') }}" alt="logo" class="logo-lg" height="28">
                     <img src="{{ asset('assets/guest/logo.png') }}" alt="small logo" class="logo-sm" height="28">
                 </a>
 
                 <!-- Brand Logo Dark -->
-                <a href="index.html" class="logo-dark">
+                <a href="/" class="logo-dark">
                     <img src="{{ asset('assets/guest/logo.png') }}" alt="dark logo" class="logo-lg" height="28">
                     <img src="{{ asset('assets/guest/logo.png') }}" alt="small logo" class="logo-sm" height="28">
                 </a>
@@ -43,25 +43,34 @@
             <!--- Menu -->
             <div data-simplebar>
                 <ul class="app-menu">
-
+                    @role('ادمين')
                     <li class="menu-item">
-                        <a href="{{ route('admin.team.index') }}" class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-home-smile"></i></span>
-                            <span class="menu-text"> الفرق </span>
+                        <a href="{{ route('admin.user.index') }}" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-user"></i></span>
+                            <span class="menu-text"> المستخدمين </span>
                         </a>
                     </li>
                     <li class="menu-item">
+                        <a href="{{ route('admin.team.index') }}" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-group"></i></span>
+                            <span class="menu-text"> الفرق </span>
+                        </a>
+                    </li>
+                    @endrole
+                    @hasanyrole(['ادمين' , 'مشرف'])
+                    <li class="menu-item">
                         <a href="{{ route('admin.presence.index') }}" class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-home-smile"></i></span>
+                            <span class="menu-icon"><i class="bx bx-badge-check"></i></span>
                             <span class="menu-text"> الحضور </span>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="{{ route('admin.team.scan') }}" class="menu-link waves-effect waves-light">
-                            <span class="menu-icon"><i class="bx bx-home-smile"></i></span>
+                            <span class="menu-icon"><i class="fa fa-qrcode"></i></span>
                             <span class="menu-text"> تسجيل الحضور </span>
                         </a>
                     </li>
+                    @endhasanyrole
                 </ul>
             </div>
         </div>

@@ -21,12 +21,12 @@
                 <div class="row">
                     <div class="col-3">
                         <div class="text-center">
-                            <img src="{{ asset('assets/sponsors/logo-3.png') }}">
+                            <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="text-center">
-                            <img class="special" src="{{ asset('assets/sponsors/logo-2.png') }}">
+                            <img  src="{{ asset('assets/sponsors/logo-2.png') }}">
                         </div>
                     </div>
                     <div class="col-3">
@@ -36,8 +36,32 @@
                     </div>
                     <div class="col-3">
                         <div class="text-center">
-                            <img src="{{ asset('assets/sponsors/logo-4.png') }}">
+                            <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
                         </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-6">
+                        <div class="alert alert-warning">
+                            <p class="text-dark">يسرنا تواصلكم واستقبال استفساراتكم للجنة التسكين والضيافة بتصفيات فيرست 2024 عبر الواتس آب
+                                <span class="badge bg-success">
+                                    <a style="text-decoration: none" href="Tel:+966508344983" class="text-white">0508344983</a>
+                                </span>
+                            </p>
+                            <p class="text-dark">أو بالضغط مباشرة على  الرابط ادناه</p>
+                            <div class="badge bg-success">
+                                <a style="text-decoration: none" class="text-white" href="wa.me/966508344983">وتساب</a>
+                            </div>
+                            <p class="text-dark m-0 p-0">مرحبا بالجميع</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <b>الدعم الفني</b>
+                        <ul>
+                            <li>
+                                <a style="text-decoration: none" class="text-white" href="Tel: +966555177306">الدعم الفني روبوتيرا</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
