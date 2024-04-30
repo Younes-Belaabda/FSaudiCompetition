@@ -36,4 +36,56 @@
 
         </div> <!-- end col -->
     </div>
+    <style>
+        footer {
+            /* min-height: 200px; */
+            /* background-color: rebeccapurple; */
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        footer {
+            padding-top: 50px !important;
+            /* background-color: #F7E4A2; */
+        }
+
+        footer img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer img.special {
+            width: 60%;
+            height: auto;
+        }
+    </style>
+    <footer>
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-3">
+                    <div class="text-center">
+                        <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/sponsors/logo-2.png') }}">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/sponsors/logo-1.png') }}">
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="text-center">
+                        <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 @endsection
