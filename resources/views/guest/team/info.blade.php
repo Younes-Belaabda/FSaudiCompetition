@@ -8,26 +8,18 @@
                 <h3>تسجيلات الحضور</h3>
                 <table class="table">
                     <tbody>
-                        <tr>
-                            <td>الأحد</td>
-                            <td>
-                                @if (\App\Models\Presence::whereDate('created_at', \Carbon\Carbon::create(2024, 04, 28)->toDateTimeString())->where('team_id', $team->id)->count() > 0)
-                                    <span class="badge bg-success">مسجل</span>
-                                @else
-                                    <span class="badge bg-danger">غير مسجل</span>
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>الإتنين</td>
-                            <td>
-                                @if (\App\Models\Presence::whereDate('created_at', \Carbon\Carbon::create(2024, 04, 29)->toDateTimeString())->where('team_id', $team->id)->count() > 0)
-                                    <span class="badge bg-success">مسجل</span>
-                                @else
-                                    <span class="badge bg-danger">غير مسجل</span>
-                                @endif
-                            </td>
-                        </tr>
+                        @foreach (\App\Models\CompetitionDay::all() as $competition_day)
+                            <tr>
+                                <td>{{ $competition_day->name }}</td>
+                                <td>
+                                    @if (\App\Models\Presence::whereDate('created_at', \Carbon\Carbon::create($competition_day->day)->toDateTimeString())->where('team_id', $team->id)->count() > 0)
+                                        <span class="badge bg-success">مسجل</span>
+                                    @else
+                                        <span class="badge bg-danger">غير مسجل</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

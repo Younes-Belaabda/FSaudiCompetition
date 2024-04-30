@@ -7,6 +7,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PresenceController;
+use App\Http\Controllers\CompetitionDayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::prefix('admin')->as('admin.')->middleware(['auth', 'verified'])->group(fu
     Route::resource('user', UserController::class);
 
     Route::resource('presence', PresenceController::class);
+    Route::resource('competition-day', CompetitionDayController::class);
 });
 
 // Team Page

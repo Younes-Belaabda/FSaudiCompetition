@@ -56,6 +56,12 @@
                             <span class="menu-text"> الفرق </span>
                         </a>
                     </li>
+                    <li class="menu-item">
+                        <a href="{{ route('admin.competition-day.index') }}" class="menu-link waves-effect waves-light">
+                            <span class="menu-icon"><i class="bx bx-group"></i></span>
+                            <span class="menu-text"> المسابقة </span>
+                        </a>
+                    </li>
                     @endrole
                     @hasanyrole(['ادمين' , 'مشرف'])
                     <li class="menu-item">
