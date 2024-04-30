@@ -18,29 +18,7 @@
     <footer>
         <div class="upper-footer sponsors">
             <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="text-center">
-                            <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="text-center">
-                            <img  src="{{ asset('assets/sponsors/logo-2.png') }}">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="text-center">
-                            <img src="{{ asset('assets/sponsors/logo-1.png') }}">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="text-center">
-                            <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
-                        </div>
-                    </div>
-                </div>
-                <div class="row my-4">
+                <div class="row my-2">
                     <div class="col-md-6">
                         <div class="alert alert-warning">
                             <p class="text-dark">يسرنا تواصلكم واستقبال استفساراتكم للجنة التسكين والضيافة بتصفيات فيرست 2024 عبر الواتس آب
@@ -62,6 +40,28 @@
                                 <a style="text-decoration: none" class="text-white" href="Tel: +966555177306">الدعم الفني روبوتيرا</a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-3">
+                        <div class="text-center">
+                            <img class="special" src="{{ asset('assets/sponsors/logo-3.png') }}">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center">
+                            <img  src="{{ asset('assets/sponsors/logo-2.png') }}">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center">
+                            <img src="{{ asset('assets/sponsors/logo-1.png') }}">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center">
+                            <img class="special" src="{{ asset('assets/sponsors/logo-4.png') }}">
+                        </div>
                     </div>
                 </div>
             </div>
